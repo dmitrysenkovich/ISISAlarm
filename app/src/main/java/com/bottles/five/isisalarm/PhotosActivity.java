@@ -16,6 +16,8 @@ public class PhotosActivity extends ActionBarActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
+    private ArrayList<PhotoInfo> photos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,17 +27,12 @@ public class PhotosActivity extends ActionBarActivity {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new PhotoRecyclerViewAdapter(StorageUtils.retrieveAllPhotos());
+        photos = StorageUtils.retrieveAllPhotos();
+        mAdapter = new PhotoRecyclerViewAdapter(photos);
         mRecyclerView.setAdapter(mAdapter);
         RecyclerView.ItemDecoration itemDecoration =
                 new DividerItemDecoration(this, LinearLayoutManager.VERTICAL);
         mRecyclerView.addItemDecoration(itemDecoration);
-
-        // Code to Add an item with default animation
-        //((MyRecyclerViewAdapter) mAdapter).addItem(obj, index);
-
-        // Code to remove an item with default animation
-        //((MyRecyclerViewAdapter) mAdapter).deleteItem(index);
     }
 
     @Override
@@ -49,15 +46,5 @@ public class PhotosActivity extends ActionBarActivity {
                     }
                 }
         );
-    }
-
-    private ArrayList<PhotoInfo> getDataSet() {
-        ArrayList results = new ArrayList<PhotoInfo>();
-        for (int index = 0; index < 20; index++) {
-            PhotoInfo obj = new PhotoInfo("Some Primary Text " + index,
-                    "Secondary " + index);
-            results.add(index, obj);
-        }
-        return results;
     }
 }

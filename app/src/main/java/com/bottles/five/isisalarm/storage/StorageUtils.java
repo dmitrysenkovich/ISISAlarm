@@ -6,6 +6,8 @@ import android.os.Environment;
 import com.bottles.five.isisalarm.PhotoInfo;
 
 import java.io.File;
+import java.io.FileFilter;
+import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -49,5 +51,15 @@ public class StorageUtils {
             photoInfoList.add(photoInfo);
         }
         return photoInfoList;
+    }
+
+    public static URI getPhotoByName(final String name) {
+        File photoFile = photosStorageDir.listFiles(new FileFilter() {
+            @Override
+            public boolean accept(File pathname) {
+                return pathname.getName().equals(name);
+            }
+        })[0];
+        return photoFile.toURI();
     }
 }
