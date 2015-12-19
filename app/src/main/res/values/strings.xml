@@ -29,4 +29,8 @@
     <string name="second_header">We care about you!</string>
     <string name="copyright">Copyright © 2015 FiveBottlesDriven</string>
     <string name="rights">All rights reserved</string>
+
+    <!-- Detected -->
+    <string name="not_detected">No terrorist on photo</string>
+    <string name="detected">Terrorist {0} detected!!!</string>
 </resources>
