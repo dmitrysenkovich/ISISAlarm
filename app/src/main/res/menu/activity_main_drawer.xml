@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/abu_bakr_al_baghdadi"
+            android:icon="@android:drawable/ic_menu_send"
+            android:title="@string/abu_bakr_al_baghdadi" />
+
+        <item
+            android:id="@+id/qq"
+            android:icon="@android:drawable/ic_menu_send"
+            android:title="@string/abu_bakr_al_baghdadi" />
+
+        <item
+            android:id="@+id/ww"
+            android:icon="@android:drawable/ic_menu_send"
+            android:title="@string/abu_bakr_al_baghdadi" />
+
+    </group>
+
+</menu>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ISIS Alarm</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Drawer menu items -->
+    <string name="abu_bakr_al_baghdadi">Abu Bakr al-Baghdadi</string>
+
+    <!-- Menu main items -->
+    <string name="photos">Photos</string>
+    <string name="account">Account</string>
+    <string name="post">Post</string>
+    <string name="call_911">Call 911</string>
+    <string name="about">About</string>
+</resources>

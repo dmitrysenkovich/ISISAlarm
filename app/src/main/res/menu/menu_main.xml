@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/photos_main_menu_item"
+        android:orderInCategory="100"
+        android:title="@string/photos"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/account_main_menu_item"
+        android:orderInCategory="100"
+        android:title="@string/account"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/post_main_menu_item"
+        android:orderInCategory="100"
+        android:title="@string/post"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/call_911_main_menu_item"
+        android:orderInCategory="100"
+        android:title="@string/call_911"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/about_main_menu_item"
+        android:orderInCategory="100"
+        android:title="@string/about"
+        app:showAsAction="never" />
+
+</menu>
