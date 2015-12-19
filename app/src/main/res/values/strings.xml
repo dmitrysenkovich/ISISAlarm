@@ -5,7 +5,17 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <!-- Drawer menu items -->
+    <string name="abu_ala_al_afri">Abu Ala al-Afri</string>
+    <string name="abu_ali_al_anbari">Abu Ali al-Anbari</string>
+    <string name="abu_ayman_al_iraqi">Abu Ayman al-Iraqi</string>
+    <string name="abu_ayyub_al_masri">Abu Ayyub al-Masri</string>
     <string name="abu_bakr_al_baghdadi">Abu Bakr al-Baghdadi</string>
+    <string name="abu_mohammad_al_adnani">Abu Mohammad al-Adnani</string>
+    <string name="abu_mohammad_al_julani">Abu Mohammad al-Julani</string>
+    <string name="abu_musab_al_zarqawi">Abu Musab al-Zarqawi</string>
+    <string name="abu_omar_al_baghdadi">Abu Omar al-Baghdadi</string>
+    <string name="abu_omar_al_shishani">Abu Omar al-Shishani</string>
+    <string name="abu_suleiman_al_naser">Abu Suleiman al-Naser</string>
 
     <!-- Menu main items -->
     <string name="photos">Photos</string>
