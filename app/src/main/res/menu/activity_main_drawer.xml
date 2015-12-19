@@ -4,19 +4,59 @@
     <group android:checkableBehavior="single">
 
         <item
+            android:id="@+id/abu_ala_al_afri"
+            android:icon="@android:drawable/ic_menu_send"
+            android:title="@string/abu_ala_al_afri" />
+
+        <item
+            android:id="@+id/abu_ali_al_anbari"
+            android:icon="@android:drawable/ic_menu_send"
+            android:title="@string/abu_ali_al_anbari" />
+
+        <item
+            android:id="@+id/abu_ayman_al_iraqi"
+            android:icon="@android:drawable/ic_menu_send"
+            android:title="@string/abu_ayman_al_iraqi" />
+
+        <item
+            android:id="@+id/abu_ayyub_al_masri"
+            android:icon="@android:drawable/ic_menu_send"
+            android:title="@string/abu_ayyub_al_masri" />
+
+        <item
             android:id="@+id/abu_bakr_al_baghdadi"
             android:icon="@android:drawable/ic_menu_send"
             android:title="@string/abu_bakr_al_baghdadi" />
 
         <item
-            android:id="@+id/qq"
+            android:id="@+id/abu_mohammad_al_adnani"
             android:icon="@android:drawable/ic_menu_send"
-            android:title="@string/abu_bakr_al_baghdadi" />
+            android:title="@string/abu_mohammad_al_adnani" />
 
         <item
-            android:id="@+id/ww"
+            android:id="@+id/abu_mohammad_al_julani"
             android:icon="@android:drawable/ic_menu_send"
-            android:title="@string/abu_bakr_al_baghdadi" />
+            android:title="@string/abu_mohammad_al_julani" />
+
+        <item
+            android:id="@+id/abu_musab_al_zarqawi"
+            android:icon="@android:drawable/ic_menu_send"
+            android:title="@string/abu_musab_al_zarqawi" />
+
+        <item
+            android:id="@+id/abu_omar_al_baghdadi"
+            android:icon="@android:drawable/ic_menu_send"
+            android:title="@string/abu_omar_al_baghdadi" />
+
+        <item
+            android:id="@+id/abu_omar_al_shishani"
+            android:icon="@android:drawable/ic_menu_send"
+            android:title="@string/abu_omar_al_shishani" />
+
+        <item
+            android:id="@+id/abu_suleiman_al_naser"
+            android:icon="@android:drawable/ic_menu_send"
+            android:title="@string/abu_suleiman_al_naser" />
 
     </group>
 

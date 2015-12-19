@@ -9,4 +9,11 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior" tools:showIn="@layout/app_bar_main"
     tools:context=".MainActivity">
 
+    <WebView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/terrorist_webview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:elevation="30dp"
+        />
+
 </RelativeLayout>
