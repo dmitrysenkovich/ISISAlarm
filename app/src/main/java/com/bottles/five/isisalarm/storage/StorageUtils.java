@@ -1,12 +1,16 @@
 package com.bottles.five.isisalarm.storage;
 
+import android.content.Context;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Environment;
+import android.provider.MediaStore;
 
 import com.bottles.five.isisalarm.PhotoInfo;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.io.IOException;
 import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -53,13 +57,20 @@ public class StorageUtils {
         return photoInfoList;
     }
 
-    public static URI getPhotoByName(final String name) {
+    public static Bitmap getPhotoByName(final String name, Context context) {
         File photoFile = photosStorageDir.listFiles(new FileFilter() {
             @Override
             public boolean accept(File pathname) {
                 return pathname.getName().equals(name);
             }
         })[0];
-        return photoFile.toURI();
+        Uri photoUri = Uri.fromFile(photoFile);
+        Bitmap photo = null;
+        try {
+            photo = MediaStore.Images.Media.getBitmap(context.getContentResolver(), photoUri);
+        } catch (IOException ignored) {
+
+        }
+        return photo;
     }
 }
