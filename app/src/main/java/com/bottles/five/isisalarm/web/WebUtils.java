@@ -1,4 +1,4 @@
-package com.bottles.five.isisalarm.webutils;
+package com.bottles.five.isisalarm.web;
 
 import android.view.MenuItem;
 import android.webkit.WebView;

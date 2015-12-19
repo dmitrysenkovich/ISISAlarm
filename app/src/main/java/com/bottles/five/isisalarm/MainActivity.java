@@ -6,25 +6,25 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
-import android.view.View;
 import android.widget.Toast;
 
-import com.bottles.five.isisalarm.webutils.WebUtils;
-
 import com.bottles.five.isisalarm.camera.CameraUtils;
+import com.bottles.five.isisalarm.web.WebUtils;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    public static final String EMERGENCY_PHONE_NUMBER = "+375299420344";
 
     WebView webView;
 
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        webView = (WebView)findViewById(R.id.terrorist_webview);
+        webView = (WebView) findViewById(R.id.terrorist_webview);
         webView.getSettings().setJavaScriptEnabled(true);
     }
 
@@ -115,6 +115,20 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void call911(MenuItem item) {
+        Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + EMERGENCY_PHONE_NUMBER));
+        try {
+            MainActivity.this.startActivity(callIntent);
+        } catch (SecurityException e) {
+            Log.e("PERMISSION_EXCEPTION", "PERMISSION_NOT_GRANTED");
+        }
+    }
+
+    public void about(MenuItem item) {
+        Intent aboutActivity = new Intent(this, AboutActivity.class);
+        startActivity(aboutActivity);
     }
 
 }
