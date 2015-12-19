@@ -1,6 +1,5 @@
 package com.bottles.five.isisalarm;
 
-
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,11 +21,11 @@ public class PhotosActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photos);
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.photos_view);
+        mRecyclerView = (RecyclerView) findViewById(R.id.photos_recycler_view);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new RecyclerViewAdapter(getDataSet());
+        mAdapter = new PhotoRecyclerViewAdapter(getDataSet());
         mRecyclerView.setAdapter(mAdapter);
         RecyclerView.ItemDecoration itemDecoration =
                 new DividerItemDecoration(this, LinearLayoutManager.VERTICAL);
@@ -42,24 +41,22 @@ public class PhotosActivity extends ActionBarActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        ((RecyclerViewAdapter) mAdapter).setOnItemClickListener(
-                new
-                        RecyclerViewAdapter.PhotoItemClickListener() {
-                            @Override
-                            public void onItemClick(int position, View v) {
-                                Log.i(LOG_TAG, " Clicked on Item " + position);
-                            }
-                        }
-        );
+        ((PhotoRecyclerViewAdapter) mAdapter).setOnItemClickListener(new
+                                                                             PhotoRecyclerViewAdapter.MyClickListener() {
+                                                                              @Override
+                                                                              public void onItemClick(int position, View v) {
+                                                                                  Log.i(LOG_TAG, " Clicked on Item " + position);
+                                                                              }
+                                                                          });
     }
 
     private ArrayList<PhotoInfo> getDataSet() {
         ArrayList results = new ArrayList<PhotoInfo>();
         for (int index = 0; index < 20; index++) {
-            PhotoInfo obj = new PhotoInfo(R.drawable.abu_bakr_al_baghdadi);
+            PhotoInfo obj = new PhotoInfo("Some Primary Text " + index,
+                    "Secondary " + index);
             results.add(index, obj);
         }
         return results;
     }
 }
-

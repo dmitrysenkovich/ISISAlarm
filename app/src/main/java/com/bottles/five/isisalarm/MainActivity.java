@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.photos_main_menu_item) {
-            Intent localeHistoryMap = new Intent(this, PhotosActivity.class);
-            startActivity(localeHistoryMap);
+            Intent photoActivity = new Intent(this, PhotosActivity.class);
+            startActivity(photoActivity);
         }
         if (id == R.id.photos_main_menu_item) {
             return true;
