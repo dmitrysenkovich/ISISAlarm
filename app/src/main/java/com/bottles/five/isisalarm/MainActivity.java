@@ -11,15 +11,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+import com.bottles.five.isisalarm.call.CallUtils;
 import com.bottles.five.isisalarm.storage.StorageUtils;
-
 import com.bottles.five.isisalarm.web.WebUtils;
 
 public class MainActivity extends AppCompatActivity
@@ -120,12 +119,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void call911(MenuItem item) {
-        Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + EMERGENCY_PHONE_NUMBER));
-        try {
-            MainActivity.this.startActivity(callIntent);
-        } catch (SecurityException e) {
-            Log.e("PERMISSION_EXCEPTION", "PERMISSION_NOT_GRANTED");
-        }
+        CallUtils.call911(MainActivity.this);
     }
 
     public void about(MenuItem item) {

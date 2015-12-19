@@ -3,7 +3,9 @@
     package="com.bottles.five.isisalarm" >
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-feature android:name="android.hardware.camera" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
@@ -26,6 +28,10 @@
         <activity android:name=".PhotosActivity" >
         </activity>
         <activity android:name=".AboutActivity" >
+        </activity>
+        <activity android:name=".DetectedActivity" >
+        </activity>
+        <activity android:name=".NotDetectedActivity" >
         </activity>
     </application>
 
