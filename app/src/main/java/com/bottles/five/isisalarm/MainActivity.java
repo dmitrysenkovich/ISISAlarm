@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,18 +15,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
-import android.view.View;
 import android.widget.Toast;
 
+import com.bottles.five.isisalarm.storage.StorageUtils;
 import com.bottles.five.isisalarm.webutils.WebUtils;
-
-import com.bottles.five.isisalarm.camera.CameraUtils;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    WebView webView;
+    private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 
+    private WebView webView;
     private Uri fileUri;
 
     @Override
@@ -42,9 +40,9 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                fileUri = CameraUtils.getOutputMediaFileUri(CameraUtils.MEDIA_TYPE_IMAGE);
+                fileUri = StorageUtils.getOutputPhotoUri(StorageUtils.MEDIA_TYPE_IMAGE);
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
-                startActivityForResult(intent, CameraUtils.CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+                startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
             }
         });
 
@@ -57,13 +55,13 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        webView = (WebView)findViewById(R.id.terrorist_webview);
+        webView = (WebView) findViewById(R.id.terrorist_webview);
         webView.getSettings().setJavaScriptEnabled(true);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == CameraUtils.CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
+        if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
                 Toast.makeText(this, "Image saved to:\n" +
                         fileUri.getPath(), Toast.LENGTH_LONG).show();

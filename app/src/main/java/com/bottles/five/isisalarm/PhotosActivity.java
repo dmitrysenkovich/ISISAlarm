@@ -4,8 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
+
+import com.bottles.five.isisalarm.storage.StorageUtils;
 
 import java.util.ArrayList;
 
@@ -14,7 +15,6 @@ public class PhotosActivity extends ActionBarActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private static String LOG_TAG = "RecyclerViewActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class PhotosActivity extends ActionBarActivity {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new PhotoRecyclerViewAdapter(getDataSet());
+        mAdapter = new PhotoRecyclerViewAdapter(StorageUtils.retrieveAllPhotos());
         mRecyclerView.setAdapter(mAdapter);
         RecyclerView.ItemDecoration itemDecoration =
                 new DividerItemDecoration(this, LinearLayoutManager.VERTICAL);
@@ -41,13 +41,14 @@ public class PhotosActivity extends ActionBarActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        ((PhotoRecyclerViewAdapter) mAdapter).setOnItemClickListener(new
-                                                                             PhotoRecyclerViewAdapter.MyClickListener() {
-                                                                              @Override
-                                                                              public void onItemClick(int position, View v) {
-                                                                                  Log.i(LOG_TAG, " Clicked on Item " + position);
-                                                                              }
-                                                                          });
+        ((PhotoRecyclerViewAdapter) mAdapter).setOnItemClickListener(
+                new PhotoRecyclerViewAdapter.MyClickListener() {
+                    @Override
+                    public void onItemClick(int position, View v) {
+                        //TODO : use microsoft faces
+                    }
+                }
+        );
     }
 
     private ArrayList<PhotoInfo> getDataSet() {
