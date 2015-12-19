@@ -11,6 +11,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,11 +19,14 @@ import android.webkit.WebView;
 import android.widget.Toast;
 
 import com.bottles.five.isisalarm.storage.StorageUtils;
-import com.bottles.five.isisalarm.webutils.WebUtils;
+
+import com.bottles.five.isisalarm.web.WebUtils;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    public static final String EMERGENCY_PHONE_NUMBER = "+375299420344";
+    
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 
     private WebView webView;
@@ -113,6 +117,20 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void call911(MenuItem item) {
+        Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + EMERGENCY_PHONE_NUMBER));
+        try {
+            MainActivity.this.startActivity(callIntent);
+        } catch (SecurityException e) {
+            Log.e("PERMISSION_EXCEPTION", "PERMISSION_NOT_GRANTED");
+        }
+    }
+
+    public void about(MenuItem item) {
+        Intent aboutActivity = new Intent(this, AboutActivity.class);
+        startActivity(aboutActivity);
     }
 
 }
