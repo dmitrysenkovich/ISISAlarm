@@ -1,5 +1,6 @@
 package com.bottles.five.isisalarm;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -42,9 +43,19 @@ public class PhotosActivity extends ActionBarActivity {
                 new PhotoRecyclerViewAdapter.MyClickListener() {
                     @Override
                     public void onItemClick(int position, View v) {
-                        //TODO : use microsoft faces
+                        startNotDetectedActivity(position);
                     }
                 }
         );
+    }
+
+    public void startNotDetectedActivity(int position) {
+        PhotoInfo photoInfo = photos.get(position);
+        String filename = photoInfo.getName();
+        Intent notDetectedActivity = new Intent(this, NotDetectedActivity.class);
+        Bundle b = new Bundle();
+        b.putString("filename", filename);
+        notDetectedActivity.putExtras(b);
+        startActivity(notDetectedActivity);
     }
 }

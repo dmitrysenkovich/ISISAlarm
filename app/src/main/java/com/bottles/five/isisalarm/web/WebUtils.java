@@ -14,8 +14,7 @@ public class WebUtils {
                 id == R.id.abu_ayman_al_iraqi || id == R.id.abu_ayyub_al_masri ||
                 id == R.id.abu_bakr_al_baghdadi || id == R.id.abu_mohammad_al_adnani ||
                 id == R.id.abu_mohammad_al_julani || id == R.id.abu_musab_al_zarqawi ||
-                id == R.id.abu_omar_al_baghdadi || id == R.id.abu_omar_al_shishani ||
-                id == R.id.abu_suleiman_al_naser) {
+                id == R.id.abu_omar_al_baghdadi || id == R.id.abu_omar_al_shishani) {
             String terroristName = item.getTitle().toString();
             String terroristPage = WIKIPEDIA_URL + terroristName.replace(" ", "_");
             webView.loadUrl(terroristPage);

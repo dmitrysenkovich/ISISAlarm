@@ -8,8 +8,9 @@ public class ParserUtils {
         try {
             while (xmlPullParser.getEventType()!=XmlPullParser.END_DOCUMENT) {
                 if (xmlPullParser.getEventType()==XmlPullParser.START_TAG) {
-                    if (xmlPullParser.getName().equals(key)) {
-                        value = xmlPullParser.getAttributeValue(0);
+                    String currentKey = xmlPullParser.getAttributeValue(0);
+                    if (currentKey.equals(key)) {
+                        value = xmlPullParser.getText();
                     }
                 }
 

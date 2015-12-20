@@ -66,8 +66,7 @@ public class MainActivity extends AppCompatActivity
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
-                Toast.makeText(this, "Image saved to:\n" +
-                        fileUri.getPath(), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Image successfully saved:\n", Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -101,8 +100,12 @@ public class MainActivity extends AppCompatActivity
             Intent photoActivity = new Intent(this, PhotosActivity.class);
             startActivity(photoActivity);
         }
-        if (id == R.id.photos_main_menu_item) {
-            return true;
+        if (id == R.id.call_911_main_menu_item) {
+            CallUtils.call911(MainActivity.this);
+        }
+        if (id == R.id.about_main_menu_item) {
+            Intent aboutActivity = new Intent(this, AboutActivity.class);
+            startActivity(aboutActivity);
         }
 
         return super.onOptionsItemSelected(item);
@@ -116,15 +119,6 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    public void call911(MenuItem item) {
-        CallUtils.call911(MainActivity.this);
-    }
-
-    public void about(MenuItem item) {
-        Intent aboutActivity = new Intent(this, AboutActivity.class);
-        startActivity(aboutActivity);
     }
 
 }

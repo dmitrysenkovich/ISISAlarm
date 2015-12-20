@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <images>
-    <image id="1">abu_ala_al_afri</image>
-    <image id="2">abu_ali_al_anbari</image>
-    <image id="3">abu_ayman_al_iraqi</image>
-    <image id="4">abu_ayyub_al_masri</image>
-    <image id="5">abu_bakr_al_baghdadi</image>
-    <image id="6">abu_mohammad_al_adnani</image>
-    <image id="7">abu_mohammad_al_julani</image>
-    <image id="8">abu_musab_al_zarqawi</image>
-    <image id="9">abu_omar_al_baghdadi</image>
-    <image id="10">abu_omar_al_shishani</image>
-    <image id="11">abu_suleiman_al_naser</image>
+    <image id="7706916a-b936-41ed-a714-852e3a9ddd3d">abu_ala_al_afri</image>
+    <image id="59c95df5-5389-4d50-bb87-899906fe97ca">abu_ali_al_anbari</image>
+    <image id="8b158f7a-3c36-4704-9967-adac26888a9e">abu_ayman_al_iraqi</image>
+    <image id="eb32d4e5-6358-497c-85ba-d31855e2fc93">abu_ayyub_al_masri</image>
+    <image id="f057940e-d8e5-4b27-8b21-768eed62f395">abu_bakr_al_baghdadi</image>
+    <image id="ced9a47e-3f2a-4451-8887-f31d479e4f94">abu_mohammad_al_adnani</image>
+    <image id="94b00f39-091e-4750-8c8c-eb918e977714">abu_mohammad_al_julani</image>
+    <image id="dd9c2f90-7043-4912-83b6-575bd219b392">abu_musab_al_zarqawi</image>
+    <image id="002d5499-1bb0-451d-b5d7-ef6f9ae2b539">abu_omar_al_baghdadi</image>
+    <image id="ba2a4b26-3dd8-4f2f-bd4c-67b926c0f3b9">abu_omar_al_shishani</image>
 </images>

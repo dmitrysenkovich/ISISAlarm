@@ -53,11 +53,6 @@
             android:icon="@android:drawable/ic_menu_send"
             android:title="@string/abu_omar_al_shishani" />
 
-        <item
-            android:id="@+id/abu_suleiman_al_naser"
-            android:icon="@android:drawable/ic_menu_send"
-            android:title="@string/abu_suleiman_al_naser" />
-
     </group>
 
 </menu>
