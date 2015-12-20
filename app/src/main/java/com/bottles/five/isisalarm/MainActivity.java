@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
-                Toast.makeText(this, "Image successfully saved:\n", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Image successfully saved", Toast.LENGTH_LONG).show();
             }
         }
     }

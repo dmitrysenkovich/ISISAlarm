@@ -1,5 +1,7 @@
 package com.bottles.five.isisalarm;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -37,5 +39,13 @@ public class DetectedActivity extends AppCompatActivity {
 
     public void call911(MenuItem item) {
         CallUtils.call911(DetectedActivity.this);
+    }
+
+    public static void startActivity(String terroristId, Context context) {
+        Intent detectedActivity = new Intent(context, DetectedActivity.class);
+        Bundle b = new Bundle();
+        b.putString("id", terroristId);
+        detectedActivity.putExtras(b);
+        context.startActivity(detectedActivity);
     }
 }
