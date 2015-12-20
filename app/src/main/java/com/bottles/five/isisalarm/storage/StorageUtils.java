@@ -10,6 +10,7 @@ import com.bottles.five.isisalarm.model.PhotoInfo;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -56,7 +57,16 @@ public class StorageUtils {
         return photoInfoList;
     }
 
-    public static Bitmap getPhotoByName(final String name, Context context) {
+    public static File getFile(final String name, Context context) {
+        return photosStorageDir.listFiles(new FileFilter() {
+            @Override
+            public boolean accept(File pathname) {
+                return pathname.getName().equals(name);
+            }
+        })[0];
+    }
+
+    public static Bitmap getPhotoByNameAsBitmap(final String name, Context context) {
         File photoFile = photosStorageDir.listFiles(new FileFilter() {
             @Override
             public boolean accept(File pathname) {
@@ -71,5 +81,24 @@ public class StorageUtils {
 
         }
         return photo;
+    }
+
+    public static byte[] getPhotoAsBinaryData(final String name, Context context) {
+        File photoFile = photosStorageDir.listFiles(new FileFilter() {
+            @Override
+            public boolean accept(File pathname) {
+                return pathname.getName().equals(name);
+            }
+        })[0];
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream(photoFile);
+            byte[] ret = new byte[0];
+            ret = new byte[fis.available()];
+            fis.read(ret);
+            return ret;
+        }
+        catch (Exception ignored) {}
+        return null;
     }
 }

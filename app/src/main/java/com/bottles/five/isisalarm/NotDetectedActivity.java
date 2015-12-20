@@ -19,7 +19,7 @@ public class NotDetectedActivity extends AppCompatActivity {
         String filename = b.getString("filename");
 
         imageView = (ImageView) findViewById(R.id.not_detected_imageview);
-        Bitmap file = StorageUtils.getPhotoByName(filename, NotDetectedActivity.this);
+        Bitmap file = StorageUtils.getPhotoByNameAsBitmap(filename, NotDetectedActivity.this);
         imageView.setImageBitmap(file);
     }
 }
