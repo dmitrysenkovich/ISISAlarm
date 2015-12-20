@@ -31,6 +31,6 @@
     <string name="rights">All rights reserved</string>
 
     <!-- Detected -->
-    <string name="not_detected">No terrorist on photo</string>
+    <string name="not_detected">No terrorists on photo</string>
     <string name="detected">Terrorist {0} detected!!!</string>
 </resources>

@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import com.bottles.five.isisalarm.call.CallUtils;
@@ -23,8 +24,6 @@ import com.bottles.five.isisalarm.web.WebUtils;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    public static final String EMERGENCY_PHONE_NUMBER = "+375299420344";
     
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 
@@ -60,6 +59,13 @@ public class MainActivity extends AppCompatActivity
 
         webView = (WebView) findViewById(R.id.terrorist_webview);
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new WebViewClient(){
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url){
+                view.loadUrl(url);
+                return true;
+            }});
     }
 
     @Override

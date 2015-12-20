@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,7 +28,7 @@ public class DetectedActivity extends AppCompatActivity {
         String id = b.getString("id");
 
         textView = (TextView) findViewById(R.id.detected_textview);
-        String terroristName = MappingUtils.getTerroristName(id, DetectedActivity.this);
+        String terroristName = MappingUtils.getTerroristName(id);
         String detectedMessageTemplate = getString(R.string.detected);
         String detectedMessage = MessageFormat.format(detectedMessageTemplate, terroristName);
         textView.setText(detectedMessage);
@@ -37,7 +37,7 @@ public class DetectedActivity extends AppCompatActivity {
         imageView.setImageDrawable(image);
     }
 
-    public void call911(MenuItem item) {
+    public void call911(View view) {
         CallUtils.call911(DetectedActivity.this);
     }
 
@@ -47,5 +47,6 @@ public class DetectedActivity extends AppCompatActivity {
         b.putString("id", terroristId);
         detectedActivity.putExtras(b);
         context.startActivity(detectedActivity);
+        PhotosActivity.resetProgressBar();
     }
 }

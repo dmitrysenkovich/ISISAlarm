@@ -31,5 +31,6 @@ public class NotDetectedActivity extends AppCompatActivity {
         b.putString("filename", filename);
         notDetectedActivity.putExtras(b);
         context.startActivity(notDetectedActivity);
+        PhotosActivity.resetProgressBar();
     }
 }
