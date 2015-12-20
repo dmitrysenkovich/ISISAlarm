@@ -6,12 +6,11 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 
-import com.bottles.five.isisalarm.PhotoInfo;
+import com.bottles.five.isisalarm.model.PhotoInfo;
 
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
-import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;

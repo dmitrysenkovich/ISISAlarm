@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.bottles.five.isisalarm.model.PhotoInfo;
+
 import java.util.ArrayList;
 
 public class PhotoRecyclerViewAdapter extends RecyclerView

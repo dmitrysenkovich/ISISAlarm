@@ -7,6 +7,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.bottles.five.isisalarm.model.PhotoInfo;
+import com.bottles.five.isisalarm.restclient.HttpFaceDetectTask;
 import com.bottles.five.isisalarm.storage.StorageUtils;
 
 import java.util.ArrayList;
@@ -43,7 +45,8 @@ public class PhotosActivity extends ActionBarActivity {
                 new PhotoRecyclerViewAdapter.MyClickListener() {
                     @Override
                     public void onItemClick(int position, View v) {
-                        startNotDetectedActivity(position);
+                        new HttpFaceDetectTask().execute();
+                   //     startNotDetectedActivity(position);
                     }
                 }
         );
